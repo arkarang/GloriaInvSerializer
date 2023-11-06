@@ -79,6 +79,10 @@ publishing {
     publications {
         create<MavenPublication>("maven") {
             from(components["java"])
+            artifact(tasks.jar) {
+                extension = "jar"
+                classifier = ""
+            }
         }
     }
 
